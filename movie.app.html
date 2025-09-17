@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mini Trailer App</title>
+  <link rel="icon" href="icon.png">
+
+  <!-- Link to CSS file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Container for the whole app -->
+  <div class="app">
+    <header>
+      <div>
+        <img src="icon.png" alt="" width="50">
+        <h1>Mini Trailer App</h1>
+        <div class="muted">Browse, search, and save favorites — demo</div>
+      </div>
+      <div>
+        <button id="show-favs" class="fav">Show favorites</button>
+      </div>
+    </header>
+
+    <!-- Controls (search, filter, sort, buttons) -->
+    <div class="controls">
+      <input id="search" type="search" placeholder="Search title or actor...">
+      <select id="genre">
+        <option value="">All genres</option>
+      </select>
+      <select id="sort">
+        <option value="popular">Sort: Popular</option>
+        <option value="year-desc">Year ↓</option>
+        <option value="year-asc">Year ↑</option>
+        <option value="rating-desc">Rating ↓</option>
+        <option value="rating-asc">Rating ↑</option>
+      </select>
+      <button id="clear">Clear</button>
+      <button id="add-sample" class="primary">Add sample movie</button>
+    </div>
+
+    <!-- Movie grid -->
+    <main id="main">
+      <div id="grid" class="grid"></div>
+      <template id="empty-tpl">
+        <div class="empty">No movies found. Try another search or add movies.</div>
+      </template>
+    </main>
+  </div>
+
+  <!-- Movie details modal -->
+  <div id="modal-backdrop" class="modal-backdrop" aria-hidden="true">
+    <div class="modal">
+      <button id="close-modal" class="close">✕</button>
+      <div class="row" id="modal-content">
+        <!-- Filled by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Link to JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
